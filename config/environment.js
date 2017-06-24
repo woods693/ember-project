@@ -4,6 +4,12 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-techeval',
     environment: environment,
+    firebase: {
+      apiKey: 'AIzaSyAwz1aGzF8u-qDzuBQQxDrBpA8uFxlaUsg',
+      authDomain: 'tech-eval-51165.firebaseapp.com',
+      databaseURL: 'https://tech-eval-51165.firebaseio.com',
+      storageBucket: 'tech-eval-51165.appspot.com'
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
