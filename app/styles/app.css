@@ -1,0 +1,45 @@
+/* Homepage Css */
+#body-home{
+    background-color:#e7e7e7;
+    padding:25px;
+    margin:0 auto;
+}
+#intro-home{
+    font-size:2em;
+    border-left:1em solid;
+    border-left-color: #dd6a58;
+    padding:20px;
+}
+#title-body-home{
+    font-size:4em;
+}
+#statement{
+    color:blue;
+    margin-left: 2em;
+    font-size:1.5em;
+}
+
+#group-list li{
+    display:inline-block;
+    margin:0;
+}
+
+#group-list{
+    text-align: center;
+}
+hr{
+    border-top-color:black;
+}
+
+#title-home{
+    text-align: center;
+    font-size:5em;
+    color: #dd6a58;
+}
+
+#group-home{
+    text-align: center;
+    font-size:2em;
+}
+
+/* end for Homepage Css */

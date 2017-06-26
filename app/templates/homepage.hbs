@@ -1,0 +1,22 @@
+<h1 id="title-home">Ember.js Demo</h1>
+<h3 id="group-home">Group 4</h3>
+
+<ul id="group-list">
+  {{#each model as |member|}}
+    <li>{{member}}</li>
+  {{/each}}
+</ul>
+
+<div id="body-home">
+<h2 id="title-body-home">Ember</h2>
+<hr>
+<p id="intro-home">
+Ember is a JavaScript front-end framework designed to help you build websites with 
+rich and complex user interactions. It does so by providing developers both with many 
+features that are essential to manage complexity in 
+modern web applications, as well as an integrated development toolkit 
+that enables rapid iteration.
+</p>
+<a {{action "statementLink"}} id="statement">-Ember Mission Statement</a>
+</div>
+

@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('tasks', function() {
     this.route('new');
   });
+  this.route('homepage');
 });
 
 export default Router;
