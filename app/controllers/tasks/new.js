@@ -3,12 +3,14 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     addTask: function(){
+      var name = this.get('name');
       var title = this.get('title');
       var description = this.get('description');
       var date = this.get('date');
 
       //Create new task
       var newTask = this.store.createRecord('task', {
+        name: name,
         title: title,
         description: description,
         date: new Date(date)

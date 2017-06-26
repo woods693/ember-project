@@ -1,7 +1,11 @@
 <form>
   <div class="form-group">
+    <label>Name</label>
+    {{input type = "text" class="form-control" value=name placeholder="Add a name..."}}
+  </div>
+  <div class="form-group">
     <label>Title</label>
-    {{input type = "text" class="form-control" value=title placeholder="Add Task..."}}
+    {{input type = "text" class="form-control" value=title placeholder="Add Event..."}}
   </div>
   <div class="form-group">
     <label>Due Date</label>
@@ -9,18 +13,18 @@
   </div>
   <div class="form-group">
     <label>Description</label>
-    {{textarea class ="form-control" value=description placeholder="Describe Task..."}}
+    {{textarea class ="form-control" value=description placeholder="Describe Event..."}}
   </div>
   <button {{action 'addTask'}} class ="btn btn-primary">Submit</button>
 </form>
 
-<h1>Tasks</h1>
+<h1>Events</h1>
 {{#each model as |task|}}
   <div class="well">
+    <h4>Submitted by: {{task.name}}</h4>
     <h4>{{#link-to 'tasks.edit' task.id}}{{task.title}}{{/link-to}}</h4>
     <small>Due: {{task.date}}</small>
     <p>{{task.description}}</p>
     <button {{action 'deleteTask' task.id}} class="btn btn-danger">Delete</button>
-
   </div>
 {{/each}}
