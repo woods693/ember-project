@@ -25,6 +25,15 @@ export default Ember.Controller.extend({
         description: '',
         date: ''
       });
+    },
+
+      deleteTask: function(id) {
+        this.store.findRecord('task', id).then(function(task){
+          task.deleteRecord();
+
+          task.save();
+        });
+      }
     }
-  }
+
 });
