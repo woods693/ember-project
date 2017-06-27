@@ -20,7 +20,6 @@
     <h4>{{#link-to 'tasks.edit' task.id}}{{task.title}}{{/link-to}}</h4>
     <small>Due: {{task.date}}</small>
     <p>{{task.description}}</p>
-    <button {{action 'deleteTask' task.id}} class="btn btn-danger">Delete</button>
 
   </div>
 {{/each}}

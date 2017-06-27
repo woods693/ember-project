@@ -36,6 +36,7 @@
     "ember-source": "~2.13.0",
     "ember-welcome-page": "^3.0.0",
     "emberfire": "^2.0.7",
+    "liquid-fire": "^0.27.3",
     "loader.js": "^4.2.3"
   },
   "engines": {

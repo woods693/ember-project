@@ -12,6 +12,8 @@ Router.map(function() {
     this.route('edit', {path: '/edit/:task_id'});
   });
   this.route('homepage', { path: '/homepage'});
+  this.resource('transition1', function() {});
+  this.resource('transition2', function() {});
 });
 
 export default Router;
