@@ -14,6 +14,8 @@ Router.map(function() {
   this.route('homepage', { path: '/homepage'});
   this.resource('transition1', function() {});
   this.resource('transition2', function() {});
+  this.route('login');
+  this.route('students');
 });
 
 export default Router;
