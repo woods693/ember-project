@@ -9,4 +9,5 @@ export default DS.Model.extend({
       return new Date();
     }
   }),
+  comments: DS.hasMany('comment', {async: true})
 });

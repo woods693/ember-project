@@ -36,25 +36,20 @@ export default Ember.Controller.extend({
     },
 
     addComment: function(id) {
-      let task = this.store.findRecord('task',id);
-      let name = this.get('name');
-      let comment = this.get('comment');
-      console.log(id);
       // Create new comment
-      var newComment = this.store.createRecord('comment', {
-        name: name,
-        comment: comment,
-        task: id
+      let task = this.get('task');
+      let comment = this.store.createRecord('comment', {
+        name: "SOS",
+        comment: "fesa"
       });
-      newComment.save();
-
-      //Clear Form
-      this.setProperties({
-        name: '',
-        comment: ''
+      this.store.findRecord('task', id).then(function(task){
+        task.get('comments').addObject(comment);
+        task.save();
+        // return comment.save().then(()=>{
+        //   return task.save();
+        // })
       });
     }
-
   }
 
 });
