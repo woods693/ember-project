@@ -14,13 +14,34 @@
   <button {{action 'addTask'}} class ="btn btn-primary">Submit</button>
 </form>
 
+<div id="comment_section">
+  <label>Comment section</label>
+  {{#each model as |comment|}}
+    <script>console.log("hi")</script>
+    <p>{{comment.comment}}</p>
+  {{/each}}
+</div>
+
 <h1>Tasks</h1>
-{{#each model as |task|}}
-  <div class="well">
+{{#each taskss as |task|}}
+  <div class="well" id="">
     <h4>{{#link-to 'tasks.edit' task.id}}{{task.title}}{{/link-to}}</h4>
     <small>Due: {{format-date task.date}}</small>
     <p>{{task.description}}</p>
     <button {{action 'deleteTask' task.id}} class="btn btn-danger">Delete</button>
+
+    <form>
+      <div class="form-group">
+        <label>Name</label>
+        {{input type = "text" class="form-control" value=name placeholder="Name"}}
+      </div>
+      <div class="form-group">
+        <label>New comment</label>
+          {{textarea class="form-control" value=comment}}
+      </div>
+      <p>{{task.id}}</p>
+      <button {{action 'addComment' task.id}} class = "btn btn-primary">Submit</button>
+    </form>
 
   </div>
 {{/each}}

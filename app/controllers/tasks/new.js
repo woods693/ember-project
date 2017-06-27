@@ -27,13 +27,34 @@ export default Ember.Controller.extend({
       });
     },
 
-      deleteTask: function(id) {
-        this.store.findRecord('task', id).then(function(task){
-          task.deleteRecord();
+    deleteTask: function(id) {
+      this.store.findRecord('task', id).then(function(task){
+        task.deleteRecord();
 
-          task.save();
-        });
-      }
+        task.save();
+      });
+    },
+
+    addComment: function(id) {
+      let task = this.store.findRecord('task',id);
+      let name = this.get('name');
+      let comment = this.get('comment');
+      console.log(id);
+      // Create new comment
+      var newComment = this.store.createRecord('comment', {
+        name: name,
+        comment: comment,
+        task: id
+      });
+      newComment.save();
+
+      //Clear Form
+      this.setProperties({
+        name: '',
+        comment: ''
+      });
     }
+
+  }
 
 });

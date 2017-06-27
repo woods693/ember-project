@@ -8,6 +8,5 @@ export default DS.Model.extend({
     defaultValue: function() {
       return new Date();
     }
-  })
-
+  }),
 });
