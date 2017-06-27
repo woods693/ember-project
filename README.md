@@ -17,6 +17,10 @@ You will need the following things properly installed on your computer.
 * `git clone <repository-url>` this repository
 * `cd ember-techeval`
 * `npm install`
+* `bower install bootstrap
+* `ember install emberfire
+* `ember install liquid-fire
+* `Npm install body-parser --save-dev
 
 ## Running / Development
 
