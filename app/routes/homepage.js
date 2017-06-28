@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     model(){
-        return ['Chris Lee', 'Jason Chang', 'Woody Chang', 'Chang Wook Ahn', 'Brandon Nguyen', 'Alin Paunescu'];
+        return ['Chris Lee', 'Jason Chan', 'Woody Chang', 'Chang Wook Ahn', 'Brandon Nguyen', 'Alin Paunescu'];
     },
     actions:{
         statementLink(){

@@ -7,6 +7,5 @@ module.exports = function(defaults) {
   });
 
   app.import('bower_components/bootstrap/dist/css/bootstrap.css');
-  app.import('bower_components/moment/min/moment.min.js');
   return app.toTree();
 };
