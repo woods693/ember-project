@@ -1,8 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  commentName: null,
-  commentBody: null,
 
   actions: {
     addTask: function(){
@@ -30,27 +28,27 @@ export default Ember.Controller.extend({
       });
     },
 
-    deleteTask: function(id) {
-      this.store.findRecord('task', id).then(function(task){
+    deleteTask: function(task) {
+      task.get('comments').then(function(comments) {
+        comments.forEach(function(c) {
+          c.deleteRecord();
+          c.save();
+        });
+      }).then(function() {
         task.deleteRecord();
-
         task.save();
       });
     },
 
-    addComment: function(id) {
+    addComment: function(task) {
       // Create new comment
       let comment = this.store.createRecord('comment', {
         name: this.get('commentName'),
         comment: this.get('commentBody')
       });
-      this.store.findRecord('task', id).then(function(task){
-        task.get('comments').addObject(comment);
-         return comment.save().then(()=>{
-           return task.save();
-         })
-      });
+      task.get('comments').addObject(comment);
       comment.save();
+      task.save();
       this.setProperties({
         commentName: '',
         commentBody: ''
