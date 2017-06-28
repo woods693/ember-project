@@ -16,7 +16,7 @@ module.exports = function(app) {
 
   app.post('/token', function(req, res){
 
-  	if(req.body.username === 'group14' && 
+  	if(req.body.username === 'group4' && 
   		req.body.password === 'password') {
   		res.send( { access_token: 'secretcode'});
   	} else {
