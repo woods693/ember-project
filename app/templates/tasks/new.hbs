@@ -22,16 +22,18 @@
     <p>{{task.description}}</p>
     <button {{action 'deleteTask' task.id}} class="btn btn-danger">Delete</button>
     {{#each task.comments as |comment|}}
-      <p>{{comment}}</p>
+      <div class="container">
+        <p><strong>{{comment.name}}</strong>: {{comment.comment}}</p>
+      </div>
     {{/each}}
     <form>
       <div class="form-group">
         <label>Name</label>
-        {{input type = "text" class="form-control" value=name placeholder="Name" onchange=(concat value='target.value')}}
+        {{input type = "text" class="form-control" value=commentName placeholder="Name"}}
       </div>
       <div class="form-group">
         <label>New comment</label>
-          {{textarea class="form-control" value=comment}}
+          {{textarea class="form-control" value=commentBody}}
       </div>
       <p>{{task.id}}</p>
       <button {{action 'addComment' task.id}} class = "btn btn-primary">Submit</button>
