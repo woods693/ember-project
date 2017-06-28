@@ -46,11 +46,15 @@ export default Ember.Controller.extend({
       });
       this.store.findRecord('task', id).then(function(task){
         task.get('comments').addObject(comment);
-        task.save();
-        // return comment.save().then(()=>{
-        //   return task.save();
-        // })
+         return comment.save().then(()=>{
+           return task.save();
+         })
       });
+      comment.save();
+      this.setProperties({
+        commentName: '',
+        commentBody: ''
+      })
     }
   }
 
