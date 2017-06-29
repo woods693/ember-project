@@ -10,6 +10,12 @@
     border-left-color: #dd6a58;
     padding:20px;
 }
+#intro-page{
+  font-size:1.5em;
+  border-left:1em solid;
+  border-left-color:lightseagreen ;
+  padding:20px;
+}
 #title-body-home{
     font-size:4em;
 }
