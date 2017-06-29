@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-
   actions: {
     addTask: function(){
       var name = this.get('name');
@@ -42,20 +41,15 @@ export default Ember.Controller.extend({
       });
     },
 
-    addComment: function(task) {
+    addComment: function(task, commentName, commentBody) {
       // Create new comment
-      let comment = this.store.createRecord('comment', {
-        name: this.get('commentName'),
-        comment: this.get('commentBody')
+      let comment = this.get('store').createRecord('comment', {
+        name: commentName,
+        comment: commentBody
       });
       task.get('comments').addObject(comment);
       comment.save();
       task.save();
-      this.setProperties({
-        commentName: '',
-        commentBody: ''
-      })
     }
   }
-
 });
