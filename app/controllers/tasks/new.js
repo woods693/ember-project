@@ -23,6 +23,7 @@ export default Ember.Controller.extend({
 
       //Clear Form
       this.setProperties({
+        name: '',
         title: '',
         description: '',
         date: ''

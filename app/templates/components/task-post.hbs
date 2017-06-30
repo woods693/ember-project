@@ -4,11 +4,17 @@
   <small>Due: {{task.date}}</small>
   <p>{{task.description}}</p>
   <button {{action 'deleteTask' task}} class="btn btn-danger">Delete</button>
+  
+  <p>Comments:</p>
   {{#each task.comments as |comment|}}
-    <div class="container">
-      <p><strong>{{comment.name}}</strong>: {{comment.comment}}</p>
-    </div>
+  <div class="panel panel-default">
+    <p><strong>{{comment.name}}</strong></p>
+    <div class="panel-heading">
+        <p>{{comment.comment}}</p>
+    </div> <!--panel-heading-->
+    </div> <!--panel panel-default-->
   {{/each}}
+
   <form>
     <div class="form-group">
       <label>Name</label>
